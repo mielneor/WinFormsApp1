@@ -40,21 +40,21 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(299, 150);
+            textBox1.Location = new Point(304, 98);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(228, 27);
             textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(299, 212);
+            textBox2.Location = new Point(304, 160);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(228, 27);
             textBox2.TabIndex = 5;
             // 
             // button1
             // 
-            button1.Location = new Point(299, 300);
+            button1.Location = new Point(304, 248);
             button1.Name = "button1";
             button1.Size = new Size(227, 78);
             button1.TabIndex = 6;
@@ -65,7 +65,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(162, 158);
+            label1.Location = new Point(167, 106);
             label1.Name = "label1";
             label1.Size = new Size(52, 20);
             label1.TabIndex = 7;
@@ -74,7 +74,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(162, 215);
+            label2.Location = new Point(167, 163);
             label2.Name = "label2";
             label2.Size = new Size(62, 20);
             label2.TabIndex = 8;
@@ -83,7 +83,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(299, 260);
+            checkBox1.Location = new Point(304, 208);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(169, 24);
             checkBox1.TabIndex = 9;
@@ -104,7 +104,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(319, 381);
+            linkLabel1.Location = new Point(324, 329);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(171, 20);
             linkLabel1.TabIndex = 11;

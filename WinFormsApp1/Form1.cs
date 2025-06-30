@@ -37,7 +37,7 @@ namespace WinFormsApp1
             }
             SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-LGP6AUH1;Initial Catalog=4 variant;Integrated Security=True");
             con.Open();
-            SqlCommand command = new SqlCommand("select login, password from [dbo.][Пользователь] where login = @Login and password = @Pass", con);
+            SqlCommand command = new SqlCommand("select login, password from [dbo].[Пользователь] where login = @Login and password = @Pass", con);
             command.Parameters.Add("@Login", SqlDbType.VarChar).Value = textBox1.Text;
             command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = textBox2.Text;
             command.ExecuteNonQuery();

@@ -21,7 +21,7 @@ namespace WinFormsApp1
         private void Form3_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-LGP6AUH1;Initial Catalog=4 variant;Integrated Security=True");
-            string Sql = $"select fio from [dbo].[Пользователи] where login = '{DataSend.text}'";
+            string Sql = $"select fio from [dbo].[Пользователь] where login = '{DataSend.text}'";
             SqlCommand scmd = new SqlCommand(Sql, con);
             con.Open();
             SqlDataReader sur = scmd.ExecuteReader();

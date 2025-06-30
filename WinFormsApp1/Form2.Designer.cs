@@ -37,6 +37,7 @@
             button1 = new Button();
             textBox3 = new TextBox();
             label4 = new Label();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // label1
@@ -53,7 +54,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(257, 302);
+            checkBox1.Location = new Point(257, 254);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(150, 24);
             checkBox1.TabIndex = 11;
@@ -63,7 +64,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(257, 199);
+            textBox2.Location = new Point(257, 151);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(261, 27);
             textBox2.TabIndex = 10;
@@ -71,7 +72,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(257, 145);
+            textBox1.Location = new Point(257, 97);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(261, 27);
             textBox1.TabIndex = 9;
@@ -80,7 +81,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(118, 199);
+            label3.Location = new Point(118, 151);
             label3.Name = "label3";
             label3.Size = new Size(85, 28);
             label3.TabIndex = 8;
@@ -90,7 +91,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(118, 141);
+            label2.Location = new Point(118, 93);
             label2.Name = "label2";
             label2.Size = new Size(73, 28);
             label2.TabIndex = 7;
@@ -98,7 +99,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(257, 344);
+            button1.Location = new Point(257, 296);
             button1.Name = "button1";
             button1.Size = new Size(261, 66);
             button1.TabIndex = 12;
@@ -108,7 +109,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(257, 269);
+            textBox3.Location = new Point(257, 221);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(261, 27);
             textBox3.TabIndex = 14;
@@ -118,17 +119,29 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(118, 269);
+            label4.Location = new Point(118, 221);
             label4.Name = "label4";
             label4.Size = new Size(61, 28);
             label4.TabIndex = 13;
             label4.Text = "ФИО:";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(292, 365);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(180, 20);
+            linkLabel1.TabIndex = 15;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Уже зарегистрированы?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(linkLabel1);
             Controls.Add(textBox3);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -155,5 +168,6 @@
         private Button button1;
         private TextBox textBox3;
         private Label label4;
+        private LinkLabel linkLabel1;
     }
 }
