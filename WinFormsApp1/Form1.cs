@@ -16,6 +16,11 @@ namespace WinFormsApp1
         public Form1()
         {
             InitializeComponent();
+            textBox2.PasswordChar = '*';       // Символ для отображения
+            textBox2.UseSystemPasswordChar = true;
+
+            // Настройка чекбокса
+            checkBox1.Checked = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,7 +50,27 @@ namespace WinFormsApp1
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                // Показать пароль
+                textBox2.PasswordChar = '\0'; // Убрать символ замены
+                textBox2.UseSystemPasswordChar = false;
+                checkBox1.Text = "Скрыть пароль";
+            }
+            else
+            {
+                // Скрыть пароль
+                textBox2.PasswordChar = '●';
+                textBox2.UseSystemPasswordChar = true;
+                checkBox1.Text = "Показать пароль";
+            }
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+            this.Hide();
         }
     }
 }

@@ -35,6 +35,7 @@
             label2 = new Label();
             checkBox1 = new CheckBox();
             label3 = new Label();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // textBox1
@@ -100,11 +101,23 @@
             label3.TabIndex = 10;
             label3.Text = "Авторизация";
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(319, 381);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(171, 20);
+            linkLabel1.TabIndex = 11;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Не зарегистрированы?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 450);
+            Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(checkBox1);
             Controls.Add(label2);
@@ -127,5 +140,6 @@
         private Label label2;
         private CheckBox checkBox1;
         private Label label3;
+        private LinkLabel linkLabel1;
     }
 }
