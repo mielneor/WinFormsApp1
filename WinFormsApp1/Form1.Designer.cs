@@ -88,6 +88,7 @@
             checkBox1.TabIndex = 9;
             checkBox1.Text = "Показывать пароль";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label3
             // 

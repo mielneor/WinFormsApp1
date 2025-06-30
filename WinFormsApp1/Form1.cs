@@ -20,6 +20,16 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string login = textBox1.Text.Trim();
+            string password = textBox2.Text;
+
+            // Проверка заполнения полей
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Введите логин и пароль!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-LGP6AUH1;Initial Catalog=4 variant;Integrated Security=True");
             con.Open();
             SqlCommand command = new SqlCommand("select login, password from [dbo.][Пользователь] where login = @Login and password = @Pass", con);
@@ -33,6 +43,10 @@ namespace WinFormsApp1
             this.Hide();
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
