@@ -28,24 +28,53 @@ namespace WinFormsApp1
             string login = textBox1.Text.Trim();
             string password = textBox2.Text;
 
-            // Проверка заполнения полей
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Введите логин и пароль!", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-LGP6AUH1;Initial Catalog=4 variant;Integrated Security=True");
-            con.Open();
-            SqlCommand command = new SqlCommand("select login, password from [dbo].[Пользователь] where login = @Login and password = @Pass", con);
-            command.Parameters.Add("@Login", SqlDbType.VarChar).Value = textBox1.Text;
-            command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = textBox2.Text;
-            command.ExecuteNonQuery();
-            DataSend.text = textBox1.Text;
-            con.Close();
-            Form3 frm = new Form3();
-            frm.Show();
-            this.Hide();
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-LGP6AUH1;Initial Catalog=4 variant;Integrated Security=True"))
+                {
+                    con.Open();
+
+                    // Правильный запрос с COUNT(*)
+                    string query = "SELECT COUNT(*) FROM Пользователь WHERE login = @Login AND password = @Pass";
+
+                    using (SqlCommand command = new SqlCommand(query, con))
+                    {
+                        command.Parameters.Add("@Login", SqlDbType.VarChar).Value = login;
+                        command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
+
+                        // Получаем количество найденных пользователей
+                        int userCount = (int)command.ExecuteScalar();
+
+                        // Проверяем, найден ли хотя бы один пользователь
+                        if (userCount > 0)
+                        {
+                            // Только при успешной проверке открываем Form3
+                            DataSend.text = login;
+                            Form3 frm = new Form3();
+                            frm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Показываем ошибку при неверных данных
+                            MessageBox.Show("Неверный логин или пароль!", "Ошибка авторизации",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка подключения",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
